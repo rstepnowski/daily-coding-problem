@@ -13,15 +13,14 @@ const Solution2 = (arr: readonly number[], k: number): boolean => {
 
   const numSet: Record<number, boolean> = {};
 
-  arr.some(element => {
+  return arr.some(element => {
     const reminder = k - element;
     if (numSet[reminder]) return true;
 
     // eslint-disable-next-line functional/immutable-data
     numSet[element] = true;
+    return false
   });
-
-  return false;
 };
 
 export default Solution2;
